@@ -54,7 +54,7 @@ jobs:
           containerfiles: |
             ./Containerfile
           context: ./
-          image: ${{ github.repository.name }}
+          image: ${{ env.IMAGE_REGISTRY }}/${{ github.repository.name }}
           tags: |
             ${{ steps.generate-image-tags.outputs.alias_tags }}
           labels: ${{ steps.define-image-metadata.outputs.labels }}
