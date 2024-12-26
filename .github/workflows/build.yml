@@ -41,10 +41,10 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: |
-            ${{ github.repository.name }}
+            ${{ github.event.repository.name }}
           labels: |
-            io.artifacthub.package.readme-url=https://raw.githubusercontent.com/cubt85iz/${{ github.repository.name }}/main/README.md
-            org.opencontainers.image.title=${{ github.repository.name }}
+            io.artifacthub.package.readme-url=https://raw.githubusercontent.com/cubt85iz/${{ github.event.repository.name }}/main/README.md
+            org.opencontainers.image.title=${{ github.event.repository.name }}
             org.opencontainers.image.version=${{ env.DATE }}
 
       - name: Build Image
@@ -54,7 +54,7 @@ jobs:
           containerfiles: |
             ./Containerfile
           context: ./
-          image: ${{ env.IMAGE_REGISTRY }}/${{ github.repository.name }}
+          image: ${{ github.event.repository.name }}
           tags: |
             ${{ steps.generate-image-tags.outputs.alias_tags }}
           labels: ${{ steps.define-image-metadata.outputs.labels }}
