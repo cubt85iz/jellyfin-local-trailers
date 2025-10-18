@@ -1,0 +1,6 @@
+[Unit]
+Description = Build service for jellyfin-local-trailers
+
+[Build]
+ImageTag = ghcr.io/cubt85iz/jellyfin-local-trailers:latest
+SetWorkingDirectory = https://github.com/cubt85iz/jellyfin-local-trailers.git

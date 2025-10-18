@@ -1,0 +1,6 @@
+[Unit]
+Description = Container service for jellyfin-local-trailers
+
+[Container]
+ContainerName = %p
+Image = jellyfin-local-trailers.build
