@@ -8,9 +8,9 @@ from jellyfin_api_client import AuthenticatedClient
 from jellyfin_api_client.api.items import get_items
 from jellyfin_api_client.models import ItemFields, BaseItemKind
 
-JELLYFIN_ENDPOINT = os.environ("JELLYFIN_ENDPOINT")
-JELLYFIN_TOKEN = os.environ("JELLYFIN_TOKEN")
-JLT_EXCLUDED_PATHS = os.environ("JLT_EXCLUDED_PATHS").split(",")
+JELLYFIN_ENDPOINT = os.environ['JELLYFIN_ENDPOINT']
+JELLYFIN_TOKEN = os.environ['JELLYFIN_TOKEN']
+JLT_EXCLUDED_PATHS = os.environ['JLT_EXCLUDED_PATHS'].split(",")
 
 # Create client for Jellyfin
 jellyfin_client = AuthenticatedClient(
